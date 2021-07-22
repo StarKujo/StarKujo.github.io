@@ -67,7 +67,7 @@ function ptoc(){
     var res
     for(var i=0; i< height; ++i){
         for(var j=0;j < width;++j){
-            res = res + map[imgArr[i*width+j][3]]
+            res = res + map[imgArr[i*width+j][3]*map.length/256]]
         }
         res = res + "<br>"
     }
