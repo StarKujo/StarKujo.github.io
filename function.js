@@ -63,11 +63,11 @@ function ptoc(){
         imgArr[i][3]=(imgArr[i][0]*0.299+imgArr[i][1]*0.587+imgArr[i][2]*0.114)
         //console.log(imgArr[i][0])
     }
-    var map = ['@','#','W','D','G','k','t','j','i',';',':',',','.',' ']
+    var map = ['@','#','W','D','G','k','t','j','i',';',':',',','.','&nbsp']
     var res
     for(var i=0; i< height; ++i){
         for(var j=0;j < width;++j){
-            res = res + map[Math.round(imgArr[i*width+j][3]*map.length/256)]
+            res = res + map[parseInt(imgArr[i*width+j][3]*map.length/256)]
         }
         res = res + "<br>"
     }
