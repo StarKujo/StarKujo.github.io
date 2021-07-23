@@ -64,7 +64,7 @@ function ptoc(){
         //console.log(imgArr[i][0])
     }
     var map = ['@','#','W','D','G','k','t','j','i',';',':',',','.','&nbsp']
-    var res
+    var res = ""
     for(var i=0; i< height; ++i){
         for(var j=0;j < width;++j){
             res = res + map[parseInt(imgArr[i*width+j][3]*map.length/256)]
