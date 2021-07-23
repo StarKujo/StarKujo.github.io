@@ -46,10 +46,10 @@ function getpic(){
 function ptoc(){
     var canvas_obj = document.getElementById("myCanvas");
     var ctx = canvas_obj.getContext("2d");  
-    var img_obj =  document.getElementById("pic")               // 设置在画布上绘图的环境  
-    ctx.drawImage(img_obj, 0, 0);             
+    var img_obj =  document.getElementById("pic")  
     var width =   canvas_obj.width
-    var height =   canvas_obj.height          // 将图片绘制到画布上
+    var height =   canvas_obj.height // 设置在画布上绘图的环境  
+    ctx.drawImage(img_obj, 0, 0, width,height)                // 将图片绘制到画布上
     var imgData_obj = ctx.getImageData(0,0,width,height)  // 获取画布上的图像像素矩阵
     var imgData = imgData_obj.data
     console.log(imgData.length)
