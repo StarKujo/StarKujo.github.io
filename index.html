@@ -2,22 +2,59 @@
 <html>
 <head> 
 <meta charset="utf-8"> 
-<title>我超</title> 
+<title>图片转字符画</title> 
 <style>
-@font-face { font-family:‘幼圆’; src:url(‘./fonts/youyuan.TTF’);}  
+@font-face {
+    font-family: 'YouYuan';
+    src: url('./fonts/youyuan.ttf') format('truetype'),
+         url('./fonts/youyuan.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 备选字体 */
+body {
+    font-family: 'YouYuan', 'Microsoft YaHei', Arial, sans-serif;
+}
+
+#out {
+    font-family: 'YouYuan', monospace;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 1px;
+}
 </style>
 <script src="function.js"></script>
 </head>
 <body>
-<img id="pic" src="sy/defult.jpg" alt="图片炸了" width="200" height="200"> 
-<p  type="text" id="one">上面是你的图</p>
-<canvas id="myCanvas" width="200" height="200"></canvas>
-<input type="text" id="giveurl"/>
-<button style="width:inherit" onclick="getpic()">!我超!</button>
+<h2>图片转字符画</h2>
+<div>
+    <img id="pic" src="sy/defult.jpg" alt="图片加载中..." width="200" height="200">
+    <p id="one">原始图片</p>
+</div>
+<canvas id="myCanvas" width="200" height="200" style="display:none;"></canvas>
+
+<div style="margin: 20px 0;">
+    <input type="text" id="giveurl" placeholder="输入图片URL或本地路径" style="width: 300px; padding: 5px;">
+    <button onclick="getpic()" style="padding: 5px 15px;">转换</button>
+    <p style="font-size: 12px; color: #666;">提示：输入图片URL或点击"转换"使用默认图片</p>
+</div>
+
 <hr>
-<p id="two">null</p>
+<p id="two">状态：等待输入</p>
 <hr>
-<p>下面是字符串</p>
-<p id="out" style="font-family:幼圆";font-size:10px;line-height: 12px;></p>
+<h3>字符画输出：</h3>
+<div style="background-color: #f5f5f5; padding: 10px; overflow: auto; max-height: 400px;">
+    <pre id="out" style="margin: 0; font-family: 'YouYuan', monospace; font-size: 10px; line-height: 12px;"></pre>
+</div>
+
+<div style="margin-top: 20px; font-size: 12px; color: #999;">
+    <p>使用说明：</p>
+    <ul>
+        <li>输入图片URL（如：https://example.com/image.jpg）</li>
+        <li>或使用相对路径（如：sy/defult.jpg）</li>
+        <li>支持格式：JPG, PNG, GIF等</li>
+    </ul>
+</div>
 </body>
 </html>
